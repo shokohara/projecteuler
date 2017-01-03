@@ -11,8 +11,10 @@ before_install:
 - mkdir -p ~/.local/bin
 - export PATH=$HOME/.local/bin:$PATH
 - travis_retry curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
+- stack install idris
 install:
 - cd $TRAVIS_BUILD_DIR/haskell; stack setup
 script:
 - cd $TRAVIS_BUILD_DIR/haskell; stack --no-terminal test --no-haddock-deps
+- cd $TRAVIS_BUILD_DIR/idris; make test
 
