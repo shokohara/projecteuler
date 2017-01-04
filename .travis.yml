@@ -21,7 +21,8 @@ before_install:
   #- cd $TRAVIS_BUILD_DIR/haskell; stack setup
 script:
 - cat ~/bin/sbt
+- sbt
   #- cd $TRAVIS_BUILD_DIR/haskell; stack --no-terminal test --no-haddock-deps
   #- cd $TRAVIS_BUILD_DIR/idris; make test
-- cd $TRAVIS_BUILD_DIR/scala; sbt test
+  #- cd $TRAVIS_BUILD_DIR/scala; sbt test
 
