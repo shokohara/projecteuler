@@ -24,7 +24,7 @@ before_install:
   #- chmod +x ~/bin/sbt
   #install:
   #- cd $TRAVIS_BUILD_DIR/haskell; stack setup
-- curl https://raw.githubusercontent.com/tototoshi/sbt-install/master/sbt-install > ~/bin/sbt-install && chmod 0755 !#:3
+- curl https://raw.githubusercontent.com/tototoshi/sbt-install/master/sbt-install > ~/bin/sbt-install && chmod 0755 ~/bin/sbt-install
 - sbt-install 1.0.0-M4
 script:
   #- cat ~/bin/sbt
