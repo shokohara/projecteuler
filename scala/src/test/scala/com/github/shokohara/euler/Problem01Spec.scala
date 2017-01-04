@@ -8,6 +8,6 @@ class Problem01Spec extends FlatSpec with Matchers {
   behavior of getClass.getSimpleName.replace("Spec", "")
 
   "fact" should "be right" in {
-    f(10) shouldBe 23
+    f(9) shouldBe 23
   }
 }

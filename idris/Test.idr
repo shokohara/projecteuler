@@ -1,23 +1,29 @@
 module Test
 
-import public Problem01
+-- %access export  -- to make the test functions visible
 
-%access export
+double : Num a => a -> a
+double a = a + a
+
+triple : Num a => a -> a
+triple a = a + double a
 
 assertEq : Eq a => (given : a) -> (expected : a) -> IO ()
 assertEq g e = if g == e
-  then putStrLn "Test Passed"
-  else putStrLn "Test Failed"
+    then putStrLn "Test Passed"
+    else putStrLn "Test Failed"
 
 assertNotEq : Eq a => (given : a) -> (expected : a) -> IO ()
 assertNotEq g e = if not (g == e)
-  then putStrLn "Test Passed"
-  else putStrLn "Test Failed"
+    then putStrLn "Test Passed"
+    else putStrLn "Test Failed"
 
-testProblem01 : IO ()
-testProblem01 = assertEq (sum $ f 9) 23
+testDouble : IO ()
+testDouble = assertEq (double 2) 4
+
+testTriple : IO ()
+testTriple = assertNotEq (triple 2) 5
 
 main : IO ()
-main = do
-  testProblem01
+main = testTriple
 
