@@ -13,23 +13,18 @@ addons:
     packages:
       - libgmp-dev
 before_install:
-  #- mkdir -p ~/.local/bin
-  #- export PATH=$HOME/.local/bin:$PATH
-  #- travis_retry curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
-  #- travis_wait 30 stack install idris
+- mkdir -p ~/.local/bin
+- export PATH=$HOME/.local/bin:$PATH
+- travis_retry curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
+- travis_wait 30 stack install idris
 - mkdir -p ~/bin
 - export PATH=$HOME/bin:$PATH
-  #- wget https://repo1.maven.org/maven2/org/scala-sbt/sbt-launch/1.0.0-M4/sbt-launch.jar -O ~/bin/sbt-launch.jar
-  #- echo '#!/bin/bash\nSBT_OPTS="-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"\njava $SBT_OPTS -jar `dirname $0`/sbt-launch.jar "$@"' > ~/bin/sbt
-  #- chmod +x ~/bin/sbt
-  #install:
-  #- cd $TRAVIS_BUILD_DIR/haskell; stack setup
+install:
+- cd $TRAVIS_BUILD_DIR/haskell; stack setup
 - curl https://raw.githubusercontent.com/tototoshi/sbt-install/master/sbt-install > ~/bin/sbt-install && chmod 0755 ~/bin/sbt-install
 - sbt-install 0.13.9
 script:
-  #- cat ~/bin/sbt
-- sbt
-  #- cd $TRAVIS_BUILD_DIR/haskell; stack --no-terminal test --no-haddock-deps
-  #- cd $TRAVIS_BUILD_DIR/idris; make test
-  #- cd $TRAVIS_BUILD_DIR/scala; sbt test
+- cd $TRAVIS_BUILD_DIR/haskell; stack --no-terminal test --no-haddock-deps
+- cd $TRAVIS_BUILD_DIR/idris; make test
+- cd $TRAVIS_BUILD_DIR/scala; sbt test
 
