@@ -4,7 +4,10 @@ import com.github.shokohara.euler.Problem01._
 import org.scalatest._
 
 class Problem01Spec extends FlatSpec with Matchers {
-  "Problem1" should "resolve" in {
+
+  behavior of getClass.getSimpleName.replace("Spec", "")
+
+  "fact" should "be right" in {
     f(10) shouldBe 23
   }
 }
