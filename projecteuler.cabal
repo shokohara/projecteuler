@@ -24,6 +24,7 @@ library
                      , Projecteuler.Problem07
                      , Projecteuler.Problem08
                      , Projecteuler.Problem09
+                     , Projecteuler.Problem10
   build-depends:       base >= 4.7 && < 5
                      , file-embed
   default-language:    Haskell2010
@@ -41,6 +42,16 @@ test-suite projecteuler-test
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
   main-is:             Spec.hs
+  other-modules:       Projecteuler.Problem01Spec
+                     , Projecteuler.Problem02Spec
+                     , Projecteuler.Problem03Spec
+                     , Projecteuler.Problem04Spec
+                     , Projecteuler.Problem05Spec
+                     , Projecteuler.Problem06Spec
+                     , Projecteuler.Problem07Spec
+                     , Projecteuler.Problem08Spec
+                     , Projecteuler.Problem09Spec
+                     , Projecteuler.Problem10Spec
   build-depends:       base
                      , projecteuler
                      , hspec
