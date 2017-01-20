@@ -26,6 +26,7 @@ library
                      , Projecteuler.Problem09
                      , Projecteuler.Problem10
                      , Projecteuler.Problem11
+                     , Projecteuler.Problem13
   build-depends:       base >= 4.7 && < 5
                      , file-embed
                      , here

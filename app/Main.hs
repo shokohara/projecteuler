@@ -13,6 +13,7 @@ import qualified Projecteuler.Problem08 as P08
 import qualified Projecteuler.Problem09 as P09
 import qualified Projecteuler.Problem10 as P10
 import qualified Projecteuler.Problem11 as P11
+import qualified Projecteuler.Problem13 as P13
 import System.Environment (getArgs)
 import System.Exit (exitFailure)
 
@@ -29,6 +30,7 @@ solutions = Map.fromList [
                          , (9, P09.resolve)
                          , (10, P10.resolve)
                          , (11, P11.resolve)
+                         , (13, P13.resolve)
                          ]
 
 solution :: Integer -> Maybe Integer
