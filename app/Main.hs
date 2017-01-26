@@ -17,6 +17,7 @@ import qualified Projecteuler.Problem13 as P13
 import qualified Projecteuler.Problem14 as P14
 import qualified Projecteuler.Problem15 as P15
 import qualified Projecteuler.Problem16 as P16
+import qualified Projecteuler.Problem17 as P17
 import System.Environment (getArgs)
 import System.Exit (exitFailure)
 
@@ -37,19 +38,21 @@ solutions = Map.fromList [
                          , (14, P14.resolve)
                          , (15, P15.resolve)
                          , (16, P16.resolve)
+                         , (17, P17.resolve)
                          ]
 
 solution :: Integer -> Maybe Integer
 solution = flip Map.lookup solutions
 
 main :: IO ()
-main = do
-  args <- getArgs
-  case args of
-    [number] -> case solution (read number :: Integer) of
-      Just v -> print v
-      Nothing -> putStrLn "There is no solution yet for this problem"
-    _ -> usage >> exitFailure
-  where
-    usage = putStrLn "Usage: stack runghc app/Main.hs [number]"
-
+main = P17.debug
+--main = do
+--  args <- getArgs
+--  case args of
+--    [number] -> case solution (read number :: Integer) of
+--      Just v -> print v
+--      Nothing -> putStrLn "There is no solution yet for this problem"
+--    _ -> usage >> exitFailure
+--  where
+--    usage = putStrLn "Usage: stack runghc app/Main.hs [number]"
+--

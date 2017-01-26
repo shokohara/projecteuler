@@ -30,6 +30,7 @@ library
                      , Projecteuler.Problem14
                      , Projecteuler.Problem15
                      , Projecteuler.Problem16
+                     , Projecteuler.Problem17
   build-depends:       base >= 4.7 && < 5
                      , file-embed
                      , here
@@ -63,6 +64,7 @@ test-suite projecteuler-test
                      , Projecteuler.Problem14Spec
                      , Projecteuler.Problem15Spec
                      , Projecteuler.Problem16Spec
+                     , Projecteuler.Problem17Spec
   build-depends:       base
                      , projecteuler
                      , hspec
