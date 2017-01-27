@@ -14,7 +14,7 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  ghc-options:         -Wall
+  ghc-options:         -Wall -O
   exposed-modules:     Projecteuler.Problem01
                      , Projecteuler.Problem02
                      , Projecteuler.Problem03
