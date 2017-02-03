@@ -45,7 +45,6 @@ solution :: Integer -> Maybe Integer
 solution = flip Map.lookup solutions
 
 main :: IO ()
---main = P17.debug
 main = do
   args <- getArgs
   case args of
