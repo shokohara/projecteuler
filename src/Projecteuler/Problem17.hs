@@ -6,9 +6,6 @@ resolve = toInteger $ f 1000
 f :: Int -> Int
 f n = length . filter (' ' /=) . filter ('-' /=) . concat $ f2 <$> [1..n]
 
-f3 :: Int -> (Int, Int, Int, Int)
-f3 n = (n `mod` 10000 `div` 1000, n `mod` 1000 `div` 100, n `mod` 100 `div` 10, n `mod` 10)
-
 f2 :: Int -> String
 f2 n =
   fa n ++

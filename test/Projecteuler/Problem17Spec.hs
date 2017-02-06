@@ -5,10 +5,11 @@ import Test.Hspec
 
 spec :: Spec
 spec = do
-  it "moddiv" $ 256 `mod` 10 == 6
-  it "moddiv" $ 256 `mod` 100 `div` 10 == 5
-  it "moddiv" $ 256 `mod` 1000 `div` 100 == 2
-  it "moddiv" $ 1024 `mod` 10000 `div` 1000 == 1
+  it "moddiv" $ do
+    256 `mod` 10 `shouldBe` 6
+    256 `mod` 100 `div` 10 `shouldBe` 5
+    256 `mod` 1000 `div` 100 `shouldBe` 2
+    1024 `mod` 10000 `div` 1000 `shouldBe` 1
   it "f" $ f 1 `shouldBe` 3
   it "f" $ f 5 `shouldBe` 19
   it "f" $ f 5 `shouldBe` 19
@@ -39,10 +40,4 @@ spec = do
   it "f2" $ f2 2001 `shouldBe` "two thousand and one"
   it "f2" $ f2 2002 `shouldBe` "two thousand and two"
   it "f2" $ f2 2111 `shouldBe` "two thousand and one hundred and eleven"
-  it "f3" $ f3 1 `shouldBe` (0, 0, 0, 1)
-  it "f3" $ f3 5 `shouldBe` (0, 0, 0, 5)
-  it "f3" $ f3 10 `shouldBe` (0, 0, 1, 0)
-  it "f3" $ f3 100 `shouldBe` (0, 1, 0, 0)
-  it "f3" $ f3 1000 `shouldBe` (1, 0, 0, 0)
-  it "f3" $ f3 9999 `shouldBe` (9, 9, 9, 9)
 
